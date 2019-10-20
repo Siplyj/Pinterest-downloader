@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>GTmetrix Analyzer</title>
+		<script src="popup.js"></script>
+		<style type="text/css">
+			body {
+				width: 150px;
+				user-select: none;
+			}
+			#openImage {
+				position: relative;
+				left: 50%;
+				transform: translate(-50%, 0);
+				padding: 5px;
+				border-radius: 5px;
+			}
+			#openImage, #searchSystems {
+				display: block;
+				outline: none;
+				text-align: center;
+				cursor: pointer;
+			}
+			.searchButton {
+				padding: 0px;
+				width: 40px;
+				height: 40px;
+				border-radius: 5px;
+				outline: none;
+			}
+
+			#searchByGoogle, #searchByYandex, #searchByBing {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="openImage">Open image in new tab</button>
+		<p>Search by:</p>
+		<div id="searchSystems">
+			<button class="searchButton">
+				<img id="searchByGoogle" src="/icons/google.png" alt="google">
+			</button>
+			<button class="searchButton">
+				<img id="searchByYandex" src="/icons/yandex.png" alt="yandex">
+			</button>
+			<button class="searchButton">
+				<img id="searchByBing" src="/icons/bing.png" alt="bing">
+			</button>
+		</div>
+	</body>
+</html>
