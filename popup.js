@@ -4,7 +4,7 @@ function click(e) {
 
 		chrome.tabs.executeScript(null, {
 			code: `
-			if (document.location.href.startsWith('https://www.pinterest.com/pin/')) {
+			if (document.location.href.includes('pinterest.com/pin/')) {
 				window.open(document.getElementsByClassName("hCL")[2].src, "_blank")
 			}`
 		});
@@ -13,12 +13,12 @@ function click(e) {
 
 		chrome.tabs.executeScript(null, {
 			code: `
-			if (document.location.href.startsWith('https://www.pinterest.com/pin/')) {
+			if (document.location.href.includes('pinterest.com/pin/')) {
 				let imgUrl = document.getElementsByClassName("hCL")[2].src;
-				window.open('https://www.google.com/searchbyimage?image_url=' + imgUrl);
-			} else if (document.location.href.startsWith('https://i.pinimg.com/')) {
+				window.open('https://lens.google.com/uploadbyurl?url=' + imgUrl);
+			} else if (document.location.href.includes('https://i.pinimg.com/')) {
 				let imgUrl = document.location.href;
-				window.open('https://www.google.com/searchbyimage?image_url=' + imgUrl);
+				window.open('https://lens.google.com/uploadbyurl?url=' + imgUrl);
 			}`
 		});
 
@@ -26,10 +26,10 @@ function click(e) {
 
 		chrome.tabs.executeScript(null, {
 			code: `
-			if (document.location.href.startsWith('https://www.pinterest.com/pin/')) {
+			if (document.location.href.includes('pinterest.com/pin/')) {
 				let imgUrl = document.getElementsByClassName("hCL")[2].src;
 				window.open('https://yandex.ru/images/search?url=' + imgUrl + '&rpt=imageview');
-			} else if (document.location.href.startsWith('https://i.pinimg.com/')) {
+			} else if (document.location.href.includes('https://i.pinimg.com/')) {
 				let imgUrl = document.location.href;
 				window.open('https://yandex.ru/images/search?url=' + imgUrl + '&rpt=imageview');
 			}`
@@ -39,10 +39,10 @@ function click(e) {
 
 		chrome.tabs.executeScript(null, {
 			code: `
-			if (document.location.href.startsWith('https://www.pinterest.com/pin/')) {
+			if (document.location.href.includes('pinterest.com/pin/')) {
 				let imgUrl = document.getElementsByClassName("hCL")[2].src;
 				window.open('https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:' + imgUrl);
-			} else if (document.location.href.startsWith('https://i.pinimg.com/')) {
+			} else if (document.location.href.includes('https://i.pinimg.com/')) {
 				let imgUrl = document.location.href;
 				window.open('https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:' + imgUrl);
 			}`
